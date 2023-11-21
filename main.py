@@ -14,25 +14,30 @@ def div(num1, num2):
     return num1 / num2
 
 
-def main():
-    operations = {
-        "+": add,
-        "-": sub,
-        "*": mul,
-        "/": div,
-    }
-
+def calculator():
+    contnious="y"
     numb1 = int(input("What is the first number?: "))
-    numb2 = int(input("What is the next number?: "))
+    while contnious=="y":
+        operations = {
+            "+": add,
+            "-": sub,
+            "*": mul,
+            "/": div,
+        }
 
-    for key in operations:
-        print(key)
+        numb2 = int(input("What is the next number?: "))
 
-    oper = input("Pick an operation?: ")
-    result = operations[oper](numb1, numb2)
+        for key in operations:
+            print(key)
 
-    print(f"{numb1} {oper} {numb2} = {result}")
+        oper = input("Pick an operation?: ")
+        result = operations[oper](numb1, numb2)
 
+        print(f"{numb1} {oper} {numb2} = {result}")
 
-if __name__ == "__main__":
-    main()
+        contnious=str(input(f"Type 'y' to continue calculating with {result}, or 'n' to exit.: "))
+        numb1=result
+        if contnious=="n":
+            calculator()
+
+calculator()
