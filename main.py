@@ -1,3 +1,5 @@
+from art import logo
+
 def add(num1, num2):
     return num1 + num2
 
@@ -15,8 +17,9 @@ def div(num1, num2):
 
 
 def calculator():
+    print(logo)
     contnious="y"
-    numb1 = int(input("What is the first number?: "))
+    numb1 = float(input("What is the first number?: "))
     while contnious=="y":
         operations = {
             "+": add,
@@ -25,7 +28,7 @@ def calculator():
             "/": div,
         }
 
-        numb2 = int(input("What is the next number?: "))
+        numb2 = float(input("What is the next number?: "))
 
         for key in operations:
             print(key)
